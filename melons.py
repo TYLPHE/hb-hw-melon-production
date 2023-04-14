@@ -5,6 +5,7 @@ import robots
 
 class Melon:
     """Melon."""
+    color = None
 
     def __init__(self, melon_type):
         """Initialize melon.
@@ -14,7 +15,6 @@ class Melon:
 
         self.melon_type = melon_type
         self.weight = 0.0
-        self.color = None
         self.stickers = []
 
     def prep(self):
@@ -35,4 +35,8 @@ class Melon:
 class Squash(Melon):
     """Winter squash."""
 
-    # FIX ME: Add Squash class definition here.
+    def prep(self):
+        '''Prepare the squash but also paint it green'''
+        
+        super().prep()
+        robots.painterbot.paint(self)
